@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Gemini Notes",
+  "version": "1.0",
+  "description": "Generates notes from YouTube videos using Gemini AI and saves them to Google Docs.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "identity",
+    "storage",
+    "downloads" 
+  ],
+  "host_permissions": ["https://*.youtube.com/"],
+  "oauth2": {
+    "client_id": "508175494280-t4nimhui83k4l755kqcrm5q8j27mnjan.apps.googleusercontent.com",
+    "scopes": [
+    "https://www.googleapis.com/auth/documents",
+    "https://www.googleapis.com/auth/cloud-platform"]
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "lib/pako.min.js",
+        "imageGenerator.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

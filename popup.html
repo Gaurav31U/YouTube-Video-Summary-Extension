@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>YouTube Gemini Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checkbox-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3>YouTube Notes Generator</h3>
+    <div class="container">
+        <p>Google API Key (From Cloud & AI Studio)</p>
+        <input type="password" id="apiKey" placeholder="Enter API Key">
+        <p>Programmable Search Engine ID</p>
+        <input type="password" id="searchEngineId" placeholder="Enter Search Engine ID for images">
+        <p>Google Doc ID (Optional)</p>
+        <input type="text" id="documentId" placeholder="Leave blank to create a new doc">
+        <p>Summary Mode</p>
+        <select id="summaryMode">
+            <option value="detailed">Detailed Summary (One Go)</option>
+            <option value="chunked">Chunked Summary (For Long Videos)</option>
+        </select>
+        <div class="checkbox-container">
+            <label for="downloadImages">Download Relevant Images</label>
+            <input type="checkbox" id="downloadImages">
+        </div>
+        <button id="saveSettings">Save Settings</button>
+        <hr>
+        <button id="generateNotes">Generate Notes</button>
+        <p id="status"></p>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
