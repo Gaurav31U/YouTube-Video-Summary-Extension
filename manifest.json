@@ -12,7 +12,7 @@
   ],
   "host_permissions": ["https://*.youtube.com/"],
   "oauth2": {
-    "client_id": "508175494280-t4nimhui83k4l755kqcrm5q8j27mnjan.apps.googleusercontent.com",
+    "client_id": "",
     "scopes": [
     "https://www.googleapis.com/auth/documents",
     "https://www.googleapis.com/auth/cloud-platform"]
